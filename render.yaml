@@ -1,0 +1,9 @@
+# Render Blueprint: free web service built from the Dockerfile.
+# NOTE: the free tier has an ephemeral disk, so SQLite data resets when the
+# service restarts or redeploys (the seeded demo data is recreated on boot).
+services:
+  - type: web
+    name: ajaia-docs
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
